@@ -11,7 +11,10 @@
   "plugins": [
     {
       "name": "personal-shopper",
-      "source": ".",
+      "source": {
+        "source": "github",
+        "repo": "fabioparisi/personal-shopper"
+      },
       "description": "Elite personal shopping assistant. Finds, compares, and verifies products across all categories. Multi-track research, price verification, tiered ranking, XLSX reports.",
       "version": "1.0.0",
       "author": {
