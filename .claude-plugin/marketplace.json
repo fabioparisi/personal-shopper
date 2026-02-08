@@ -1,12 +1,10 @@
 {
   "name": "fabio-tools",
+  "version": "1.0.0",
+  "description": "Personal shopping and product research tools for Claude Code/Cowork",
   "owner": {
     "name": "Fabio Parisi",
     "email": "fabioparisi@me.com"
-  },
-  "metadata": {
-    "description": "Personal shopping and product research tools for Claude Code/Cowork",
-    "version": "1.0.0"
   },
   "plugins": [
     {
@@ -15,13 +13,13 @@
         "source": "github",
         "repo": "fabioparisi/personal-shopper"
       },
-      "description": "Elite personal shopping assistant. Finds, compares, and verifies products across all categories. Multi-track research, price verification, tiered ranking, XLSX reports.",
+      "description": "Elite personal shopping assistant with multi-track research, price verification, tiered ranking, and XLSX reports.",
       "version": "1.0.0",
       "author": {
         "name": "Fabio Parisi"
       },
       "category": "productivity",
-      "tags": ["shopping", "price-comparison", "product-research", "deals", "italy"]
+      "keywords": ["shopping", "price-comparison", "product-research", "deals", "italy"]
     }
   ]
 }

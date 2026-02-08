@@ -1,4 +1,5 @@
 ---
+name: shop
 description: >
   Elite personal shopping assistant. Finds, compares, verifies, and recommends
   products across all categories. Invoke with /personal-shopper:shop followed by
@@ -6,24 +7,7 @@ description: >
   iPhone 14 Pro Max sotto 40 euro', '/personal-shopper:shop migliori dentifrici
   per gengive sensibili', '/personal-shopper:shop confronta ISEO x1R vs CISA DOMO'
 argument-hint: "[la tua richiesta di shopping in italiano o inglese]"
-allowed-tools:
-  - WebSearch
-  - WebFetch
-  - Bash
-  - Read
-  - Write
-  - Glob
-  - Grep
-  - Task
-  - mcp__Claude_in_Chrome__navigate
-  - mcp__Claude_in_Chrome__read_page
-  - mcp__Claude_in_Chrome__find
-  - mcp__Claude_in_Chrome__computer
-  - mcp__Claude_in_Chrome__javascript_tool
-  - mcp__Claude_in_Chrome__get_page_text
-  - mcp__Claude_in_Chrome__tabs_context_mcp
-  - mcp__Claude_in_Chrome__tabs_create_mcp
-  - mcp__Claude_in_Chrome__form_input
+allowed-tools: WebSearch, WebFetch, Bash, Read, Write, Glob, Grep, Task, mcp__Claude_in_Chrome__navigate, mcp__Claude_in_Chrome__read_page, mcp__Claude_in_Chrome__find, mcp__Claude_in_Chrome__computer, mcp__Claude_in_Chrome__javascript_tool, mcp__Claude_in_Chrome__get_page_text, mcp__Claude_in_Chrome__tabs_context_mcp, mcp__Claude_in_Chrome__tabs_create_mcp, mcp__Claude_in_Chrome__form_input
 ---
 
 # PersonalShopper v1.0

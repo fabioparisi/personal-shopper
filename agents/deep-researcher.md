@@ -4,13 +4,8 @@ description: >
   Deep parallel product researcher. Runs extensive web searches and page
   verifications for complex shopping queries. Use for medical/health product
   searches, benchmark funnels, and any query requiring exhaustive coverage.
-model: opus
-allowed-tools:
-  - WebSearch
-  - WebFetch
-  - Read
-  - Glob
-  - Grep
+model: sonnet
+tools: WebSearch, WebFetch, Read, Glob, Grep
 ---
 
 # Deep Product Researcher
