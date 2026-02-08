@@ -1,0 +1,16 @@
+{
+  "name": "personal-shopper",
+  "version": "1.0.0",
+  "description": "Elite personal shopping assistant. Finds, compares, and verifies products across all categories. Searches globally, filters for EU/Italy availability, verifies every link and price. Handles health products, baby gear, electronics, furniture, fashion, food, and more.",
+  "author": {
+    "name": "Fabio Parisi"
+  },
+  "keywords": [
+    "shopping",
+    "price-comparison",
+    "product-research",
+    "deals",
+    "italy"
+  ],
+  "category": "productivity"
+}
