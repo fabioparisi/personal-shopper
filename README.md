@@ -1,19 +1,27 @@
-# PersonalShopper Plugin
+# PersonalShopper Plugin for Claude Code
 
-Elite personal shopping assistant for Claude Code / Claude Cowork.
+Elite personal shopping assistant that finds, compares, verifies, and recommends products across any category.
 
 ## What it does
 
-Finds, compares, verifies, and recommends products across any category. Searches globally, filters for EU/Italy availability, verifies every link and price on the actual page. Never hallucates.
+- Searches globally, filters for EU/Italy availability, verifies every link and price on the actual page
+- Multi-track parallel research: expert benchmark, innovation frontier, real-world sentiment, EU availability
+- Tiered ranking: best overall, premium, best value, best for you
+- XLSX reports for large result sets (10+ products)
+- Browser automation fallback for JS-heavy e-commerce sites
+- Zero hallucination: every price and link verified via WebFetch or Chrome MCP
 
 ## Installation
 
+### From marketplace (recommended)
 ```bash
-# Test locally
-claude --plugin-dir ~/personal-shopper
+claude plugin marketplace add https://github.com/fabioparisi/personal-shopper
+claude plugin install personal-shopper@fabio-tools
+```
 
-# Or add to a marketplace
-/plugin marketplace add ./personal-shopper
+### Local development
+```bash
+claude --plugin-dir ~/personal-shopper
 ```
 
 ## Usage
@@ -27,45 +35,30 @@ claude --plugin-dir ~/personal-shopper
 
 ## Components
 
-### Command
-- `/personal-shopper:shop` — Main search command with full research protocol
+| Component | Type | Description |
+|-----------|------|-------------|
+| `/personal-shopper:shop` | Command | Main search command with full multi-track research protocol |
+| `shopping-advisor` | Skill (auto) | Background shopping knowledge, auto-triggers on product discussions |
+| `price-hunter` | Skill (auto) | Price verification knowledge, auto-triggers on price queries |
+| `product-verifier` | Skill (auto) | Link/site verification knowledge, auto-triggers on trust checks |
+| `deep-researcher` | Agent | Parallel subagent for deep research tracks (A/B/C/D) |
+| `xlsx_report.py` | Script | Generates formatted XLSX reports with openpyxl |
 
-### Skills (auto-triggered)
-- `shopping-advisor` — Background shopping knowledge and user profile
-- `price-hunter` — Price verification and deal authenticity
-- `product-verifier` — Link verification and site trust assessment
+## Query Types
 
-### Agent
-- `deep-researcher` — Forked subagent for parallel deep research on complex queries
-
-### Scripts
-- `xlsx_report.py` — Generates formatted XLSX reports (auto-installs openpyxl)
-
-## Query Types Supported
-
-1. **Exact product search** — Find specific products by name, SKU, brand+model
+1. **Exact product** — Find specific products by name/SKU/brand+model
 2. **Health/medical** — Exhaustive formulation matching, strain-by-strain verification
-3. **Benchmark funnel** — Global best → EU available → Best for you
-4. **Deal hunting** — Find discounts with authenticity verification
+3. **Benchmark funnel** — Global best > EU available > Best for you
+4. **Deal hunting** — Discount verification with authenticity checks
 5. **Comparison** — Side-by-side with weighted scoring
-6. **Replacement/upgrade** — Find better alternatives to a bad product
-7. **Creative/advisory** — Expert domain advice + product research
-8. **Quick lookup** — Fast factual answers
-9. **Cross-matching** — Find accessories matching an existing product list
-10. **Site trust** — Verify if an ecommerce site is legitimate
-
-## Key Features
-
-- **Zero hallucination**: Every price verified on actual page, every link visited
-- **Multi-track research**: Global benchmark, innovation frontier, real-world sentiment, EU availability
-- **Tier ranking**: Best overall, premium, best value, best for you
-- **XLSX reports**: Auto-generated for 10+ results, opens automatically
-- **Health override**: Extra thoroughness for medical/health products
-- **Baby protocol**: Safety certification verification for baby products
-- **Deal authenticity**: Flags fake discounts and suspicious pricing
+6. **Replacement/upgrade** — Find better alternatives
+7. **Creative/advisory** — Expert domain advice + product search
+8. **Quick lookup** — Fast verified answers
+9. **Cross-matching** — Find accessories for existing product list
+10. **Site trust** — Verify e-commerce site legitimacy
 
 ## Requirements
 
 - Claude Code with WebSearch and WebFetch access
-- Python 3 (for XLSX generation)
-- MCP Chrome tools (optional, for JS-heavy site fallback)
+- Python 3 (for XLSX generation, auto-bootstraps openpyxl)
+- Claude in Chrome extension (optional, for browser automation fallback)

@@ -1,10 +1,12 @@
 # Connectors
 
-This plugin requires no external connectors. All research is performed using Claude's built-in tools:
+No external API keys or services required. All tools are built into Claude Code.
 
-- **WebSearch**: Web searches across all search engines
-- **WebFetch**: Direct page content extraction
-- **MCP Chrome tools**: Browser automation for JS-heavy sites (fallback)
-- **Bash**: XLSX report generation via Python script
-
-No API keys, no external services, no additional configuration needed.
+| Tool | Purpose | Required |
+|------|---------|----------|
+| WebSearch | Product discovery, expert reviews, price searches | Yes |
+| WebFetch | Page content extraction, price/stock verification | Yes |
+| Task (deep-researcher) | Parallel multi-track research via subagent | Yes |
+| Bash | XLSX report generation via Python script | Yes |
+| Read/Write | Temp file handling for XLSX JSON data | Yes |
+| Chrome MCP tools | Browser automation for JS-heavy e-commerce sites | Optional |
